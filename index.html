@@ -1,0 +1,118 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UberReplica - Tu Servicio de Transporte Online</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v7.3.0/ol.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/ol@v7.3.0/dist/ol.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <header>
+      <h1><i class="fas fa-car icon"></i>UberReplica</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a onclick="showSection('homeSection')"><i class="fas fa-home"></i> Inicio</a></li>
+        <li><a onclick="showSection('aboutSection')"><i class="fas fa-info-circle"></i> Acerca de</a></li>
+        <li><a onclick="showSection('contactSection')"><i class="fas fa-phone"></i> Contacto</a></li>
+        <li><a onclick="showSection('accountSection')"><i class="fas fa-user"></i> Mi Cuenta</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div id="homeSection" class="section active">
+          <div id="map"></div>
+
+          <div class="form-group">
+            <label for="pickupLocation"><i class="fas fa-map-marker-alt icon"></i>Ubicación de recogida:</label>
+            <input type="text" id="pickupLocation" readonly placeholder="Haga click en Usar mi Ubicación">
+          </div>
+
+          <div class="form-group">
+            <label for="destination"><i class="fas fa-flag-checkered icon"></i>Destino:</label>
+            <input type="text" id="destination" readonly placeholder="Haga click en el mapa para obtener su destino">
+          </div>
+
+          <div class="button-group">
+            <button id="useMyLocation"><i class="fas fa-location-arrow icon"></i>Usar mi ubicación</button>
+            <button id="clearLocations"><i class="fas fa-trash-alt icon"></i>Limpiar ubicaciones</button>
+          </div>
+
+          <button id="requestRide"><i class="fas fa-taxi icon"></i>Solicitar viaje</button>
+        </div>
+
+        <div id="aboutSection" class="section">
+          <h2>Acerca de UberReplica</h2>
+          <p>UberReplica es una innovadora plataforma de transporte que conecta a pasajeros con conductores de manera
+            rápida y eficiente. Nuestra misión es proporcionar un servicio de transporte confiable, seguro y accesible
+            para todos.</p>
+          <p>Fundada en 2023, UberReplica ha revolucionado la forma en que las personas se mueven en las ciudades. Con
+            nuestra aplicación fácil de usar, puedes solicitar un viaje con solo unos pocos toques en tu teléfono.</p>
+          <h3>Nuestros valores:</h3>
+          <ul>
+            <li>Seguridad ante todo</li>
+            <li>Innovación constante</li>
+            <li>Servicio al cliente excepcional</li>
+            <li>Sostenibilidad y responsabilidad social</li>
+          </ul>
+        </div>
+
+        <div id="contactSection" class="section">
+          <h2>Contacto</h2>
+          <p>Estamos aquí para ayudarte. No dudes en ponerte en contacto con nosotros si tienes alguna pregunta,
+            sugerencia o necesitas asistencia.</p>
+          <ul>
+            <li><i class="fas fa-envelope"></i> Email: soporte@uberreplica.com</li>
+            <li><i class="fas fa-phone"></i> Teléfono: +1 (555) 123-4567</li>
+            <li><i class="fas fa-map-marker-alt"></i> Dirección: 123 Calle Principal, Ciudad, País</li>
+          </ul>
+          <h3>Horario de atención:</h3>
+          <p>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+          <p>Sábados: 10:00 AM - 2:00 PM</p>
+          <p>Domingos: Cerrado</p>
+        </div>
+
+        <div id="accountSection" class="section">
+          <h2>Mi Cuenta</h2>
+          <p>Bienvenido a tu cuenta personal de UberReplica. Aquí puedes gestionar tu perfil, ver tu historial de viajes
+            y administrar tus métodos de pago.</p>
+          <div class="form-group">
+            <label for="username">Nombre de usuario:</label>
+            <input type="text" id="username" placeholder="Tu nombre de usuario">
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico:</label>
+            <input type="text" id="email" placeholder="Tu correo electrónico">
+          </div>
+          <button onclick="updateAccount()">Actualizar información</button>
+          <h3>Historial de viajes</h3>
+          <ul id="tripHistory">
+            <li>No hay viajes recientes</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 <a target="_blank" href="https://joseluisvilches.netlify.app">José Luis Vilches</a>. Todos los
+        derechos reservados.</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+
+</html>
